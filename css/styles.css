@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+/* VARIABLES */
+
+:root {
+  --White: #ffffff;
+  --Dark-30/*opacity 30%*/: rgba(0, 0, 0, 0.3);
+  --Gray-50/*opacity 50%*/ : rgba(233, 233, 233, 0.5);
+  --Blue: #0e143c;
+  --Blue-light/*light*/ : #179de9;
+  --Blue-dark/*dark*/ : #00507c;
+  --Pink-light/*light*/ : #f1c6d7;
+  --Red-red/*opacity 50%*/ : rgba(255, 0, 0, 0.5);
+}
+
+body {
+  background: transparent linear-gradient(130deg, var(--Blue) 0%, var(--Pink-light) 100%) fixed; /* ajouter fixed pour prolonger le bg quand l'ecran est trop grand*/
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  color: var(--White);
+  margin: 0;
+  /* height: 100vh; /* ca prends toute la taille de la fenetre donc ca enleve les demarquations */
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--Gray-50);
+  padding: 10px 0;
+}
+
+.nav-left,
+.nav-left ul,
+.nav-right ul,
+footer ul{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Solution 1 : enlever les soulignement et changer la couleur */
+.nav-left ul li a,
+.nav-right ul li a,
+footer ul li a{
+  text-decoration: none;
+  color: var(--White);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* Solution 2: enlever les soulignement et changer la couleur
+header ul li a{
+  text-decoration: none;
+  color: var(--White);
+} */
+
+.logo {
+  width: 90px;
+}
+
+#sign-in {
+  align-self: center;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid var(--White);
+  color: var(--White);
+  border-radius: 25px;
+}
+
+/* ===== MAIN ====== */
+
+/* container est une classe qui s'applique a header / main / footer */
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+main {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  color: var(--White);
+  padding: 150px 0;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.intro p {
+  font-size: 1.3rem;
+  margin: 20px 0;
+}
+
+.pictures {
+  position: relative;
+}
+
+.intro {
+  width: 30%;
+}
+
+.intro a:first-child {
+  text-decoration: none;
+  color: var(--White);
+  padding: 10px 30px;
+  background: transparent linear-gradient(180deg, #179de9 0%, #00507c 100%);
+  border-radius: 10px;
+  text-shadow: 1px 1px 0 var(--Dark-30); /* ombre texte */
+  box-shadow: 0 3x 4px var(--Gray-50); /* ombre box */
+  margin-right: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  color: var(--White);
+  padding: 10px 30px;
+  border-radius: 4px;
+}
+
+.intro a:nth-child(2) {
+  border: 1px solid var(--White);
+}
+
+/* PICTURES */
+.pictures {
+  position: relative;
+  width: 60%;
+  text-align: center; /* text-align aligne horizontalement img et text */
+}
+
+.pictures img:nth-child(1) {
+  margin-right: 200px;
+}
+
+.pictures img:nth-child(3) {
+  position: absolute;
+  /* display: none; permet de faire disparaitre un élément  */
+  top: -20%;
+  left: 50%; /* lors d'un decalement vers un coté il part du bord de la page */
+  transform: translateX(-50%); /* Déplacement de 50% de facona  centrer horizontalement l'élément en position absolue*/
+  filter: drop-shadow(40px 40px 40px var(--Dark-30));
+}
+
+.pictures img:nth-child(1),
+.pictures img:nth-child(2) {
+  filter: drop-shadow(40px 40px 40px var(--Dark-30)); /* maniere de mettre de l'ombre */
+}
+
+/* ===== FOOTER ====== */
+footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--Gray-50);
+  align-items: center;
+  padding: 10px 0;
+}
+
+footer a img {
+  width: 15%;
+  filter: invert(20%);
+  padding-top: 10px;
+}
